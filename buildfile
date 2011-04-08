@@ -1,7 +1,7 @@
 repositories.remote << 'http://repo1.maven.org/maven2'
 
-#upload_to = 'scala_tools_releases'
-upload_to = 'scala_tools_snapshots'
+upload_to = 'scala_tools_releases'
+#upload_to = 'scala_tools_snapshots'
 #upload_to = 'silo'
 #url, user, pass = Buildr.settings.user[upload_to].values_at('url', 'user', 'pass')
 #repositories.release_to = { :url => url, :username => user, :password => pass }   
@@ -35,7 +35,6 @@ define "parboiled" do
   SCALATEST = "org.scalatest:scalatest:jar:1.4-SNAPSHOT"
 
   compile.using :deprecation => true, :target => "1.5", :other => ["-encoding", "UTF-8"], :lint=> "all"
-  meta_inf << file('NOTICE')
 
   desc "The core parts of parboiled, depended on by everything else"
   define "core" do
